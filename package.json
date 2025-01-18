@@ -1,0 +1,21 @@
+{
+  "name": "feriados-br",
+  "version": "1.0.2",
+  "description": "Biblioteca para gerenciar feriados brasileiros",
+  "main": "dist/index.js",
+  "types": "dist/types.js",
+  "files": [
+    "dist/**/*",
+    "holidays.json"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "keywords": [
+    "feriados",
+    "brasil",
+    "datas"
+  ],
+  "author": "Lucas Peixoto",
+  "license": "MIT"
+}

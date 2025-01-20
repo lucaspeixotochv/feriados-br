@@ -1,4 +1,4 @@
-import { Holiday, HolidayConfig } from "./types";
+import { Holiday, HolidayConfig, YYYYMMDD } from "./types";
 import holidaysConfig from "../holidays.json";
 
 export class HolidayManager {
@@ -16,11 +16,19 @@ export class HolidayManager {
     return this.config.nacionais;
   }
 
-  isHoliday(date: string, uf?: string): boolean {
+  isHoliday(date: YYYYMMDD, uf?: string): boolean {
     const allHolidays = [
       ...this.config.nacionais,
       ...(uf ? this.getHolidaysByState(uf) : []),
     ];
-    return allHolidays.some((holiday) => holiday.data === date);
+
+    return allHolidays.some((holiday) => {
+      if (holiday.data.match(/^\d{2}-\d{2}$/)) {
+        const [, month, day] = date.split("-");
+        return holiday.data === `${month}-${day}`;
+      }
+
+      return holiday.data === date;
+    });
   }
 }

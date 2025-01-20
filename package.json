@@ -17,5 +17,8 @@
     "datas"
   ],
   "author": "Lucas Peixoto",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.7.3"
+  }
 }

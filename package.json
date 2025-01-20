@@ -1,6 +1,6 @@
 {
   "name": "feriados-br",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Biblioteca para gerenciar feriados brasileiros",
   "main": "dist/index.js",
   "types": "dist/types.js",

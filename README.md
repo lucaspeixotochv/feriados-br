@@ -55,12 +55,28 @@ console.log(holidayManager.getHolidaysByState("SP"));
 3. **Verificar se uma Data é Feriado**  
    A biblioteca permite verificar se uma data específica é um feriado em determinado estado.
 
-### Exemplo:
+### Exemplo - Somente Nacional:
 
 ```javascript
-// Verificar se 09/07/2025 é feriado em São Paulo
+// Verificar se 09/07/2025 é feriado no Brasil
+const isHoliday = holidayManager.isHoliday("2025-07-09");
+console.log(isHoliday); // true ou false
+```
+
+### Exemplo - Nacional e Estadual(SP):
+
+```javascript
+// Verificar se 09/07/2025 é feriado no Brasil e em São Paulo
 const isHoliday = holidayManager.isHoliday("2025-07-09", "SP");
 console.log(isHoliday); // true ou false
+```
+
+### Sempre passe uma string no formato "YYYY-MM-DD". Para converter um objeto Date para esse formato, siga as instruções abaixo:
+
+```javascript
+const date = new Date();
+// Data formatada para passar no parâmetro
+const formatedDate = date.toISOString().split("T")[0];
 ```
 
 ## Feriados
